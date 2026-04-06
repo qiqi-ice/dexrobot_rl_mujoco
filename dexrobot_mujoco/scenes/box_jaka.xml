@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mujoco model="box_floating_hand">
+<mujoco model="box">
     <include file="../parts/defaults.xml" />
     
     <include file="scene_sim/topfloor_scene.xml" />
     <include file="furniture_sim/simpleTable/simpleTable_asset.xml" />
-    <include file="../parts/dexhand021_right_floating_asset.xml" />
+    <include file="../parts/dexhand021_right_jaka_zu7_asset.xml" />
 
     <worldbody>
+     
         <body name="floating_hand_base" pos="0 0 1.2">
-            <include file="../parts/dexhand021_right_floating_body.xml" />
+            <include file="../parts/dexhand021_right_jaka_zu7_body.xml" />
         </body>
         <body name="scenetable" pos="0 0 0" euler="0 0 1.57">
             <include
@@ -22,7 +23,7 @@
         </body>
     </worldbody>
 
-    <include file="../parts/dexhand021_right_floating_actuator.xml" />
-    <include file="../parts/dexhand021_right_floating_sensor.xml" />
-    <include file="../parts/dexhand021_right_floating_contact.xml" />
+    <include file="../parts/dexhand021_right_jaka_zu7_actuator.xml" />
+    <include file="../parts/dexhand021_right_jaka_zu7_sensor.xml" />
+    <include file="../parts/dexhand021_right_jaka_zu7_contact.xml" />
 </mujoco>

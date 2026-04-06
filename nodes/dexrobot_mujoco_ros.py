@@ -19,8 +19,14 @@ import requests
 import signal
 from threading import Thread
 import cv2
+
 from dexrobot_mujoco.wrapper import MJSimWrapper, TSSensorManager, VRManager
 from dexrobot_mujoco.utils.angle_utils import adjust_angles
+
+import sys
+sys.path.append("/opt/ros/noetic/lib/python3/dist-packages")
+
+
 
 def float_list(x):
     return np.array(list(map(float, x.split(","))))
@@ -286,7 +292,7 @@ class MujocoJointController(ROSNode):
         # save previous angle measurements
         self.rpy_prev = np.zeros(3)
 
-    def forward_sim(self):
+    def forward_sim(self,event):
         """Forward the simulator until the current time."""
         current_time = time.time() - self.mj.start_time
         # Step the simulation to apply the control
@@ -365,7 +371,7 @@ class MujocoJointController(ROSNode):
             if name in self.tracked_joint_names:
                 self.tracked_joint_states_ref[name] = pos
 
-    def output_data(self):
+    def output_data(self,event):
         """Output the data to the specified formats."""
         joint_pos = self.mj.data.qpos[self.tracked_joint_qpos_idx]
         joint_vel = self.mj.data.qvel[self.tracked_joint_qvel_idx]

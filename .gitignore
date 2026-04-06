@@ -144,6 +144,17 @@ dmypy.json
 # Mujoco
 MUJOCO_LOG.TXT
 
+# Temporary grasp scene directories (created by DexRobotGraspEnv)
+dexrobot_grasp_*/
+
+# macOS metadata files
+.DS_Store
+._.DS_Store
+._*
+
+# Training outputs
+outputs/
+
 # code2prompt artifacts
 dexrobot_mujoco.txt
 reference/

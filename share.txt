@@ -1,0 +1,21 @@
+conda deactivate 
+conda activate dexrobot
+
+source /opt/ros/noetic/setup.bash
+
+服务端
+source /opt/ros/noetic/setup.bash 
+roscore
+
+客户端
+cd dexrobot
+
+conda deactivate 
+conda activate dexrobot
+source source_dexrobot_ros.sh
+
+python nodes/dexrobot_mujoco_ros.py dexrobot_mujoco/models/dexhand021_right.xml
+
+
+
+https://worranhin.github.io/2025/03/04/mujoco/

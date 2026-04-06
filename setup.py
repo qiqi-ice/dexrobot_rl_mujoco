@@ -73,6 +73,9 @@ setup(
             'black',
             'mypy',
         ],
+        'rl': [
+            'torch',
+        ],
         'tashan': [
             'mujoco==3.2.3',  # TaShan sensor library requires specific MuJoCo version
             # Note: TaShan sensor library also requires Python 3.8

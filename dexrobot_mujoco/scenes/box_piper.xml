@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mujoco model="box_floating_hand">
+<mujoco model="daxhand021_right_piper_catching_box">
     <include file="../parts/defaults.xml" />
     
     <include file="scene_sim/topfloor_scene.xml" />
     <include file="furniture_sim/simpleTable/simpleTable_asset.xml" />
-    <include file="../parts/dexhand021_right_floating_asset.xml" />
+    <include file="../parts/dexhand021_right_piper_asset.xml" />
 
     <worldbody>
-        <body name="floating_hand_base" pos="0 0 1.2">
-            <include file="../parts/dexhand021_right_floating_body.xml" />
+        <camera name = "rgb_camera" pos = "0 0.8 1" euler = "-1.7 0 3.1415926 " fovy = "60"/>
+        <body name="dexhand021_with_piper" pos="-0.35 0 0.76">
+            <include file="../parts/dexhand021_right_piper_body.xml" />
+
         </body>
         <body name="scenetable" pos="0 0 0" euler="0 0 1.57">
             <include
                 file="furniture_sim/simpleTable/simpleMarbleTable_body.xml" />
         </body>
-        <body name="box" pos="0 0 0.82">
+        <body name="box" pos="0.3 0 0.82">
             <inertial pos="0 0 0" mass="0.03" diaginertia="0.00002 0.00002 0.00002" />
             <geom type="box" size="0.03 0.03 0.03" pos="0 0 0" euler="0. 0. 0."
                 rgba="0.49803922 0.72156863 0.87058824 1" />
@@ -22,7 +24,7 @@
         </body>
     </worldbody>
 
-    <include file="../parts/dexhand021_right_floating_actuator.xml" />
-    <include file="../parts/dexhand021_right_floating_sensor.xml" />
-    <include file="../parts/dexhand021_right_floating_contact.xml" />
+    <include file="../parts/dexhand021_right_piper_actuator.xml" />
+    <include file="../parts/dexhand021_right_piper_sensor.xml" />
+    <include file="../parts/dexhand021_right_piper_contact.xml" />
 </mujoco>
