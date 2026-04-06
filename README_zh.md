@@ -2,22 +2,23 @@
 
 [English](README.md) | [中文](README_zh.md)
 
-DexRobot 灵巧手的触觉仿真环境，基于 MuJoCo 并集成 ROS 支持。
+## 强化学习与 PPO
 
-## 核心功能
+本库支持使用近端策略优化 (PPO) 进行灵巧操作任务的强化学习。
 
-- **触觉传感**：支持 MuJoCo 原生触觉传感器和他山（TaShan）11维触觉传感器
-- **优化的手部模型**：提供完整和简化的碰撞几何体，可根据性能需求调整
-- **机器人集成**：支持将手安装在各种机械臂上（JAKA Zu7 等）
-- **丰富的环境**：可组合家具和交互物体的场景
-- **ROS 兼容性**：与 ROS1/ROS2 生态系统集成
-- **VR 可视化**：可选的 VR 支持，用于调试
+### 训练抓取策略
 
-## 演示视频
+使用 PPO 训练抓取策略：
 
-https://github.com/user-attachments/assets/5d51bcc1-133a-4675-80da-6b9ec1d85e5c
+```bash
+python scripts/train_grasp_ppo.py
+```
 
-视频展示了捏取手势过程中他山传感器的实时可视化，显示拇指和食指传感器的力大小和方向反馈。
+在 `outputs/grasp_ppo/` 中查看训练日志和结果。
+
+### 预训练场景
+
+在 `grasp_scenes/` 中探索预训练的抓取场景。
 
 ## 安装
 
