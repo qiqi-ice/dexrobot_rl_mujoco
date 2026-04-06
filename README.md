@@ -2,22 +2,23 @@
 
 [English](README.md) | [中文](README_zh.md)
 
-Tactile simulation for DexRobot hands in MuJoCo with ROS integration.
+## Reinforcement Learning with PPO
 
-## Key Features
+This library supports reinforcement learning for dexterous manipulation tasks using Proximal Policy Optimization (PPO).
 
-- **Tactile sensing**: Support for both MuJoCo native touch sensors and TaShan 11-dimensional tactile sensors
-- **Optimized hand models**: Full and simplified collision geometries for performance tuning
-- **Robot integration**: Mount hands on various robot arms (JAKA Zu7, etc.)
-- **Rich environments**: Compose scenes with furniture and interactive objects
-- **ROS compatibility**: Integration with ROS1/ROS2 ecosystems
-- **VR visualization**: Optional VR support for debugging
+### Training Grasping Policies
 
-## Demo Video
+Train grasping policies with PPO:
 
-https://github.com/user-attachments/assets/5d51bcc1-133a-4675-80da-6b9ec1d85e5c
+```bash
+python scripts/train_grasp_ppo.py
+```
 
-The video demonstrates real-time TaShan sensor visualization during a pinch gesture, showing force magnitude and direction feedback from thumb and index finger sensors.
+View training logs and results in `outputs/grasp_ppo/`.
+
+### Pre-trained Scenes
+
+Explore pre-trained grasping scenes in `grasp_scenes/`.
 
 ## Installation
 
